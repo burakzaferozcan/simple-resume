@@ -17,3 +17,7 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', [ResumeController::class, 'index']);
 
 Route::get('/web', [ResumeController::class, 'index']);
+
+Route::prefix("/admin")->group(function () {
+    Route::resource("/about",\App\Http\Controllers\admin\AboutController::class);
+});
