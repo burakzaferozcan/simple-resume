@@ -21,5 +21,7 @@ Route::prefix("/admin")->group(function () {
     Route::resource("/about", \App\Http\Controllers\admin\AboutController::class);
     Route::resource("/experience", \App\Http\Controllers\admin\ExperienceController::class);
     Route::resource("/education", \App\Http\Controllers\admin\EducationController::class);
+    Route::resource("/skills", \App\Http\Controllers\admin\SkillsController::class);
+
 
 });
