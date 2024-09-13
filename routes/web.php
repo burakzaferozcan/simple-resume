@@ -20,4 +20,6 @@ Route::get('/web', [ResumeController::class, 'index']);
 Route::prefix("/admin")->group(function () {
     Route::resource("/about", \App\Http\Controllers\admin\AboutController::class);
     Route::resource("/experience", \App\Http\Controllers\admin\ExperienceController::class);
+    Route::resource("/education", \App\Http\Controllers\admin\EducationController::class);
+
 });
