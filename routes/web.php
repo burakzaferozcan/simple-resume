@@ -22,6 +22,7 @@ Route::prefix("/admin")->group(function () {
     Route::resource("/experience", \App\Http\Controllers\admin\ExperienceController::class);
     Route::resource("/education", \App\Http\Controllers\admin\EducationController::class);
     Route::resource("/skills", \App\Http\Controllers\admin\SkillsController::class);
+    Route::resource("/contact", \App\Http\Controllers\admin\ContactController::class);
 
 
 });
