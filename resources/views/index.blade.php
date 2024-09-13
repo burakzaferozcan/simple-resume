@@ -55,11 +55,11 @@
     <div id="verticalTab" class="resp-vtabs w3-agile" style="display: block; width: 100%; margin: 0px;">
 
         <ul class="resp-tabs-list agileits-w3layouts">
-            <li class="resp-tab-item"><span>About</span></li>
-            <li class="resp-tab-item"><span>Experience</span></li>
-            <li class="resp-tab-item agileinfo"><span>Education</span></li>
-            <li class="resp-tab-item"><span>Skills</span></li>
-            <li class="resp-tab-item"><span>Contact</span></li>
+            <li class="resp-tab-item"><span>Hakkımda</span></li>
+            <li class="resp-tab-item"><span>Deneyim</span></li>
+            <li class="resp-tab-item agileinfo"><span>Eğitim</span></li>
+            <li class="resp-tab-item"><span>Yetenek</span></li>
+            <li class="resp-tab-item"><span>İletişim</span></li>
         </ul>
 
         <div class="resp-tabs-container">
@@ -117,75 +117,39 @@
 
             <div class="resp-tab-content">
                 <div class="work">
-                    <div class="work-info agileits-w3layouts">
-                        <h4>2013 - 2016</h4>
-                        <h5>Company 2</h5>
-                        <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque
-                            laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi
-                            architecto beatae vitae dicta sunt explicabo </p>
-                    </div>
-                    <div class="work-info agile">
-                        <h4>2009 - 2013</h4>
-                        <h5>Company 1</h5>
-                        <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque
-                            laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi
-                            architecto beatae vitae dicta sunt explicabo </p>
-                    </div>
+                    @foreach($experience as $exp)
+                        <div class="work-info agileits-w3layouts">
+                            <h4>{{$exp->job_start}} - {{$exp->job_finish}}</h4>
+                            <h5>{{$exp->company_name}}</h5>
+                            <p>{{$exp->job_description}}</p>
+                        </div>
+                    @endforeach
                 </div>
             </div>
 
             <div class="resp-tab-content">
                 <div class="work w3-agileits">
-                    <div class="work-info">
-                        <h4>2007 - 2009</h4>
-                        <h5>University</h5>
-                        <p>Eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae.</p>
-                    </div>
-                    <div class="work-info agileinfo">
-                        <h4>2004 - 2007</h4>
-                        <h5>Senior High</h5>
-                        <p>Eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae.</p>
-                    </div>
-                    <div class="work-info w3layouts">
-                        <h4>1995 - 2004</h4>
-                        <h5>School</h5>
-                        <p>Eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae.</p>
-                    </div>
+                    @foreach($education as $edu)
+                        <div class="work-info">
+                            <h4>{{$edu->start_edu}} - {{$edu->end_edu}}</h4>
+                            <h5>{{$edu->school_name}}</h5>
+                            <p>{{$edu->school_description}}</p>
+                        </div>
+                    @endforeach
                 </div>
             </div>
 
             <div class="resp-tab-content">
                 <div class="our-skills">
-                    <div class="single-skill">
-                        <p class="lead">HTML</p>
-                        <div class="progress">
-                            <div class="progress-bar progress-bar-1">90%</div>
+                    @foreach($skills as $skill)
+                        <div class="single-skill">
+                            <p class="lead">{{$skill->name}}</p>
+                            <div class="progress">
+                                <div class="progress-bar progress-bar-1">{{$skill->skills_percent}}</div>
+                            </div>
                         </div>
-                    </div>
-                    <div class="single-skill">
-                        <p class="lead">CSS</p>
-                        <div class="progress wthree">
-                            <div class="progress-bar progress-bar-2">80%</div>
-                        </div>
-                    </div>
-                    <div class="single-skill">
-                        <p class="lead">JAVASCRIPT</p>
-                        <div class="progress w3-agile">
-                            <div class="progress-bar progress-bar-3">85%</div>
-                        </div>
-                    </div>
-                    <div class="single-skill">
-                        <p class="lead">PHP</p>
-                        <div class="progress">
-                            <div class="progress-bar agile progress-bar-4">95%</div>
-                        </div>
-                    </div>
-                    <div class="single-skill">
-                        <p class="lead">SQL</p>
-                        <div class="progress w3layouts">
-                            <div class="progress-bar progress-bar-5">75%</div>
-                        </div>
-                    </div>
+                    @endforeach
+
                 </div>
             </div>
 
@@ -193,56 +157,56 @@
                 <div class="agileabout-info aitsabout">
                     <ul>
                         <li>
-                            <div class="li1">Name</div>
-                            <div class="li2 wthree">:</div>
-                            <div class="li3">Alan Parrish</div>
-                            <div class="clearfix w3-agile"></div>
-                        </li>
-                        <li>
-                            <div class="li1 w3-agile">Birthday</div>
+                            <div class="li1">Ad Soyad</div>
                             <div class="li2">:</div>
-                            <div class="li3">10/10/1990</div>
+                            <div class="li3">{{$about->name}}</div>
                             <div class="clearfix"></div>
                         </li>
                         <li>
+                            <div class="li1">Telefon</div>
+                            <div class="li2">:</div>
+                            <div class="li3">{{$about->phone_number}}</div>
+                            <div class="clearfix w3-agileits"></div>
+                        </li>
+                        <li>
                             <div class="li1">Phone</div>
-                            <div class="li2 w3-agile">:</div>
+                            <div class="li2">:</div>
                             <div class="li3">001-8766488735</div>
                             <div class="clearfix"></div>
                         </li>
                         <li>
                             <div class="li1">Email</div>
-                            <div class="li2">:</div>
-                            <div class="li3"><a class="mail" href="mailto:mail@example.com">info@example.com</a></div>
-                            <div class="clearfix agile"></div>
+                            <div class="li2 agileinfo">:</div>
+                            <div class="li3"><a class="mail" href="mailto:mail@example.com">{{$about->email}}</a>
+                            </div>
+                            <div class="clearfix"></div>
                         </li>
                         <li>
                             <div class="li1">Website</div>
                             <div class="li2">:</div>
-                            <div class="li3"><a href="#">www.examplesite.com</a></div>
+                            <div class="li3"><a href="#">{{$about->website}}</a></div>
                             <div class="clearfix"></div>
                         </li>
                         <li>
-                            <div class="li1 w3-agile">Address</div>
+                            <div class="li1 agileinfo">Adres</div>
                             <div class="li2">:</div>
-                            <div class="li3">Parma Via Modena, 40019, Sant'Agata Bolognese, BO, Italy</div>
-                            <div class="clearfix"></div>
+                            <div class="li3 w3-agileits">{{$about->address}}
+                            </div>
+                            <div class="clearfix wthree"></div>
                         </li>
                     </ul>
                 </div>
                 <div class="clear"></div>
                 <div class="social-icons w3layouts agileits">
-                    <h4>Follow Me on</h4>
+                    <h4>Beni Takip Et</h4>
+
                     <ul>
-                        <li class="fb w3ls w3layouts agileits"><a href="#"><span
-                                    class="icons w3layouts agileits"></span><span class="text w3layouts agileits">Facebook</span></a>
-                        </li>
-                        <li class="twt w3ls w3layouts agileits"><a href="#"><span
-                                    class="icons w3layouts agileits"></span><span class="text w3layouts agileits">Twitter</span></a>
-                        </li>
-                        <li class="ggp w3ls w3layouts agileits"><a href="#"><span
-                                    class="icons w3layouts agileits"></span><span class="text w3layouts agileits">Google+</span></a>
-                        </li>
+                        @foreach($social as $s)
+                            <li class="fb w3ls w3layouts agileits"><a href="{{$s->social_url}}"><span
+                                            class="icons w3layouts agileits"></span><span
+                                            class="text w3layouts agileits">{{$s->social_name}}</span></a>
+                            </li>
+                        @endforeach
                     </ul>
                 </div>
             </div>
