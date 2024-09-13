@@ -1,6 +1,8 @@
 @extends("admin.layout.adminlayout")
 
 @section("content")
+    <a href="{{route('about.create')}}" class="btn btn-success">Oluştur</a>
+
     <table class="table">
         <thead>
         <tr>
@@ -23,8 +25,15 @@
                 <td>{{$item->email}}</td>
                 <td><a href="{{$item->website}}" target="_blank">Git</a></td>
                 <td>{{$item->address}}</td>
-                <td><a class="btn btn-info">Güncelle</a></td>
-                <td><a class="btn btn-danger">Sil</a></td>
+                <td><a href="{{route('about.edit',$item->id)}}" class="btn btn-info">Güncelle</a></td>
+                <td>
+                    <form action="{{route('about.destroy',$item->id)}}" method="POST">
+                        @csrf
+                        @method("DELETE")
+                        <button type="submit" class="btn btn-danger">Sil</button>
+                    </form>
+                </td>
+
             </tr>
         @endforeach
 

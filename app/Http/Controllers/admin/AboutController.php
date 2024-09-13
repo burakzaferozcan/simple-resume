@@ -14,7 +14,7 @@ class AboutController extends Controller
     public function index()
     {
         //
-        $about= About::get();
+        $about = About::get();
         return view('admin.about.index', compact('about'));
     }
 
@@ -24,6 +24,7 @@ class AboutController extends Controller
     public function create()
     {
         //
+        return view('admin.about.create');
     }
 
     /**
@@ -32,6 +33,10 @@ class AboutController extends Controller
     public function store(Request $request)
     {
         //
+        $about = About::create($request->all());
+        return redirect()->route('about.index');
+
+
     }
 
     /**
@@ -48,6 +53,8 @@ class AboutController extends Controller
     public function edit(string $id)
     {
         //
+        $about = About::findorfail($id);
+        return view('admin.about.update', compact('about'));
     }
 
     /**
@@ -56,6 +63,9 @@ class AboutController extends Controller
     public function update(Request $request, string $id)
     {
         //
+        $about = About::findorfail($id);
+        $about->update($request->all());
+        return redirect()->route('about.index');
     }
 
     /**
@@ -64,5 +74,7 @@ class AboutController extends Controller
     public function destroy(string $id)
     {
         //
+        $about = About::findorfail($id)->delete();
+        return redirect()->route('about.index');
     }
 }

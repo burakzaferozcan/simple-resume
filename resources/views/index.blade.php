@@ -84,12 +84,6 @@
                                 <div class="clearfix w3-agileits"></div>
                             </li>
                             <li>
-                                <div class="li1">Phone</div>
-                                <div class="li2">:</div>
-                                <div class="li3">001-8766488735</div>
-                                <div class="clearfix"></div>
-                            </li>
-                            <li>
                                 <div class="li1">Email</div>
                                 <div class="li2 agileinfo">:</div>
                                 <div class="li3"><a class="mail" href="mailto:mail@example.com">{{$about->email}}</a>
@@ -203,8 +197,8 @@
                     <ul>
                         @foreach($social as $s)
                             <li class="fb w3ls w3layouts agileits"><a href="{{$s->social_url}}"><span
-                                            class="icons w3layouts agileits"></span><span
-                                            class="text w3layouts agileits">{{$s->social_name}}</span></a>
+                                        class="icons w3layouts agileits"></span><span
+                                        class="text w3layouts agileits">{{$s->social_name}}</span></a>
                             </li>
                         @endforeach
                     </ul>
