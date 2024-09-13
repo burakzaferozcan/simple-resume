@@ -10,7 +10,9 @@
             <th scope="col">Başlama Zamanı</th>
             <th scope="col">Bitiş Zamanı</th>
             <th scope="col">Okul İsmi</th>
-            <th scope="col">Açıklama</th>
+            <th scope="col">Açıklama</th> 
+            <th scope="col">Güncelle</th>
+            <th scope="col">Sil</th>
         </tr>
         </thead>
         <tbody>
